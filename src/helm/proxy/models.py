@@ -865,6 +865,16 @@ ALL_MODELS = [
             GPT2_TOKENIZER_TAG,
         ],
     ),
+    Model(
+        group="mlfoundations",
+        name="mlfoundations/open-lm",
+        tags=[
+            TEXT_MODEL_TAG,
+            INSTRUCTION_FOLLOWING_MODEL_TAG,
+            LIMITED_FUNCTIONALITY_TEXT_MODEL_TAG,
+            GPT2_TOKENIZER_TAG,
+        ],
+    ),
     # For debugging
     Model(
         group="simple",

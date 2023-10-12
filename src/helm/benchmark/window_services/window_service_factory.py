@@ -291,6 +291,11 @@ class WindowServiceFactory:
             from helm.benchmark.window_services.lit_gpt_window_service import LitGPTWindowServce
 
             window_service = LitGPTWindowServce(service)
+
+        elif organization == "mlfoundations":
+            from helm.benchmark.window_services.open_lm_window_service import OpenLMWindowServce
+
+            window_service = OpenLMWindowServce(service)
         else:
             raise ValueError(f"Unhandled model name: {model_name}")
 

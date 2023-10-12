@@ -196,6 +196,14 @@ class AutoClient(Client):
                     checkpoint_dir=Path(os.environ.get("LIT_GPT_CHECKPOINT_DIR", "")),
                     precision=os.environ.get("LIT_GPT_PRECISION", "bf16-true"),
                 )
+            elif organization == "mlfoundations":
+                from helm.proxy.clients.open_lm_client import OpenLMClient
+
+                client = OpenLMClient(
+                    cache_config=cache_config,
+                    checkpoint_dir=Path(os.environ.get("OPEN_LM_CHECKPOINT_DIR", "")),
+                    params_dir=Path(os.environ.get("OPEN_LM_PARAMS_DIR", "")),
+                )
 
             else:
                 raise ValueError(f"Could not find client for model: {model}")
@@ -301,6 +309,9 @@ class AutoClient(Client):
                 client = MegatronClient(cache_config=cache_config)
 
             elif organization == "lightningai":
+                client = self._get_client(tokenizer)
+
+            elif organization == "mlfoundations":
                 client = self._get_client(tokenizer)
 
             else:

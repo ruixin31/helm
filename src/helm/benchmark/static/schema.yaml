@@ -365,6 +365,14 @@ models:
     num_parameters: 1
     release_date: 2023-04-04
 
+  # Open_LM
+  - name: mlfoundations/open_lm
+    display_name: OpenLM
+    description: OpenLM is a minimal but performative language modeling (LM) repository, aimed to facilitate research on medium sized LMs.
+    creator_organization: OpenLM team
+    access: open
+    num_parameters: 1
+    release_date: 2023-09-26
 
   # Meta
   - name: together/opt-iml-175b
