@@ -205,8 +205,8 @@ class HuggingFaceServerFactory:
 class HuggingFaceClient(CachingClient):
     def __init__(
         self,
-        tokenizer: Tokenizer,
         cache_config: CacheConfig,
+        tokenizer: Optional[Tokenizer] = None,
         pretrained_model_name_or_path: Optional[str] = None,
         revision: Optional[str] = None,
     ):
